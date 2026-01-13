@@ -5,6 +5,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
+import models.Person;
+
 public class Sets {
 
     public Sets() {
@@ -48,13 +50,31 @@ public class Sets {
     }
 
     public Set<String> construirTreeSetConComparador() {
-        Set<String> linkedHashSet = new LinkedHashSet<>();
-        linkedHashSet.add("C");
-        linkedHashSet.add("B");
-        linkedHashSet.add("D");
-        linkedHashSet.add("A");
-        linkedHashSet.add("A");
+        Set<String> treeSet = new TreeSet<>(
+                (pal1, pal2) -> pal1.compareToIgnoreCase(pal2));
 
-        return linkedHashSet;
+        treeSet.add("D");
+        treeSet.add("A");
+        treeSet.add("B");
+        treeSet.add("E");
+        treeSet.add("I");
+        treeSet.add("B");
+        treeSet.add("O");
+        treeSet.add("B");
+        treeSet.add("a");
+
+        return treeSet;
+    }
+
+    public Set<Person> personTreeSet(){
+        Set<Person> treePersons = new TreeSet<>();
+        treePersons.add(new Person("Carlos",23 ));
+        treePersons.add(new Person("Ana",30 ));
+        treePersons.add(new Person("Luis",18 ));
+        treePersons.add(new Person("Ana",20 ));
+        treePersons.add(new Person("Andres",23 ));
+        treePersons.add(new Person("Luis",18 ));
+        return treePersons;
+
     }
 }
