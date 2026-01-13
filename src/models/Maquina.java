@@ -12,7 +12,7 @@ public class Maquina implements Comparable<Maquina> {
     public Maquina() {
     }
 
-    public Maquina(String nombre, String ip, int subred, int riesgo) {
+    public Maquina(String nombre, String ip, List<Integer> puertos) {
         this.nombre = nombre;
         this.ip = ip;
         this.subred = calcularSubred();
